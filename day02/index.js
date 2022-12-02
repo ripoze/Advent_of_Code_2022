@@ -1,7 +1,7 @@
 const { off } = require('process')
 
 var data = require('fs').readFileSync('day02/input.txt', 'utf8')
-data = data.trim().split('\n').map(s => s.split(' ')).map(s => s = { opponent: s[0], me: s[1], score: 0 })
+data = data.trim().split('\n').map(s => s.split(' ')).map(s => s = { opponent: s[0], me: s[1] })
 
 function calculateScore(data) {
     let score = 0
@@ -23,7 +23,6 @@ console.log('Part 1:', calculateScore(data)) // 14264
 
 //Part 2
 data = data.map(s => {
-    s.score = 0
     if (s.me === 'X') { //need to lose
         if (s.opponent === 'A') s.me = 'Z'
         if (s.opponent === 'B') s.me = 'X'
