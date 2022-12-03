@@ -1,5 +1,3 @@
-const { off } = require('process')
-
 var data = require('fs').readFileSync('day02/input.txt', 'utf8')
 data = data.trim().split('\n').map(s => s.split(' ')).map(s => s = { opponent: s[0], me: s[1] })
 
